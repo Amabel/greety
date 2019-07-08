@@ -1,7 +1,7 @@
 {
-  "name": "npm-package-template",
+  "name": "greety",
   "version": "1.0.0",
-  "description": "The description of your npm package.",
+  "description": "Say hello in different languages",
   "main": "dist/umd/index.js",
   "unpkg": "dist/umd/index.min.js",
   "scripts": {
@@ -21,11 +21,11 @@
     "test": "jest --coverage"
   },
   "keywords": [
-    "template",
-    "node package template"
+    "greet",
+    "greeting"
   ],
   "author": "Amabel",
-  "homepage": "https://github.com/Amabel/npm-package-template",
+  "homepage": "https://github.com/Amabel/greety",
   "license": "MIT",
   "files": [
     "dist"
