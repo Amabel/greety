@@ -1,7 +1,7 @@
 <div align="center">
-  <h1>Npm Package Template</h1>
-  <p>A quick start to build a node package.</p>
-  <a href="https://circleci.com/gh/Amabel/npm-package-template">
+  <h1>Greety</h1>
+  <p>Hello, Bonjour, Hola, Привет, 你好, Ciao, こんにちは, 안녕하세요, Guten Tag, Aloha</p>
+  <a href="#">
     <img src="https://img.shields.io/circleci/build/github/Amabel/npm-package-template.svg?style=for-the-badge" alt="Build">
   </a>
   <a href="#">
@@ -15,15 +15,9 @@
   <br><br>
 </div>
 
+## Feature
+
 ## Usage
-
-Relace fields below in `package.json`:
-
-- `name`
-- `description`
-- `keywords`
-- `author`
-- `homepage`
 
 ## License
 
