@@ -1,6 +1,6 @@
 {
   "name": "greety",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Say hello in different languages",
   "main": "dist/umd/index.js",
   "unpkg": "dist/umd/index.min.js",
@@ -24,6 +24,10 @@
     "greet",
     "greeting"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "git+https://github.com/Amabel/greety"
+  },
   "author": "Amabel",
   "homepage": "https://github.com/Amabel/greety",
   "license": "MIT",
