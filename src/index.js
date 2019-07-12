@@ -1,3 +1,7 @@
-import { hello } from './js/main'
+import Greety from './js/main'
 
-export { hello }
+let greety = Greety.init({
+  language: 'ja'
+})
+
+console.log(greety.greeting())
