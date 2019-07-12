@@ -39,6 +39,11 @@
       "pre-commit": "lint-staged"
     }
   },
+  "standard": {
+    "ignore": [
+      "test"
+    ]
+  },
   "lint-staged": {
     "src/index.js": [
       "standard  --fix",
