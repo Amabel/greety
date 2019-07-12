@@ -1,4 +1,4 @@
-import Greety from './js/main'
+import Greety from './js/greety'
 
 let greety = Greety.init({
   language: 'ja'
