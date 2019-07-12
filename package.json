@@ -44,6 +44,11 @@
       "test"
     ]
   },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./test/setup.js"
+    ]
+  },
   "lint-staged": {
     "src/index.js": [
       "standard  --fix",
