@@ -1,5 +1,6 @@
 import babel from 'rollup-plugin-babel'
 import nodeResolve from 'rollup-plugin-node-resolve'
+import json from 'rollup-plugin-json'
 import { terser } from 'rollup-plugin-terser'
 import changeCase from 'change-case'
 import pkg from './package.json'
@@ -24,7 +25,11 @@ export default [
       file: pkg.main,
       format: 'umd'
     },
-    plugins: [babel(getBabelOptions({ useESModules: true })), nodeResolve()]
+    plugins: [
+      json(),
+      babel(getBabelOptions({ useESModules: true })),
+      nodeResolve()
+    ]
   },
   {
     input,
@@ -34,7 +39,12 @@ export default [
       file: pkg.unpkg,
       format: 'umd'
     },
-    plugins: [babel(getBabelOptions({ useESModules: true })), nodeResolve(), terser()]
+    plugins: [
+      json(),
+      babel(getBabelOptions({ useESModules: true })),
+      nodeResolve(),
+      terser()
+    ]
   },
   {
     input,
@@ -42,8 +52,12 @@ export default [
       banner,
       name,
       file: pkg.module,
-      format: 'umd'
+      format: 'esm'
     },
-    plugins: [babel(getBabelOptions({ useESModules: true }))]
+    plugins: [
+      json(),
+      babel(getBabelOptions({ useESModules: true })),
+      nodeResolve()
+    ]
   }
 ]
