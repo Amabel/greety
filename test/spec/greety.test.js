@@ -13,13 +13,13 @@ describe('greety', () => {
   })
 })
 
-describe('greety.init()', () => {
+describe('greety.config()', () => {
   it('merges the default props with the supplied options', () => {
-    expect(greety.init({ language: 'zh' }).options).toEqual({ ...DEFAULT, language: 'zh' })
+    expect(greety.config({ language: 'zh' }).options).toEqual({ ...DEFAULT, language: 'zh' })
   })
 
   it('returns an instance of greety', () => {
-    expect(greety.init()).not.toBe(null)
+    expect(greety.config()).not.toBe(null)
   })
 })
 
@@ -32,7 +32,7 @@ describe('greety.greeting()', () => {
 
   context("when 'formal' is set to false", () => {
     beforeEach(() => {
-      greety.init({ formal: false })
+      greety.config({ formal: false })
     })
 
     it('returns a non-formal greeting in English', () => {

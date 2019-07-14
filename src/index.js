@@ -1,6 +1,6 @@
 import Greety from './js/greety'
 
-let greety = Greety.init({
+let greety = Greety.config({
   language: 'ja'
 })
 

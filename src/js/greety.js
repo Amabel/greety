@@ -7,7 +7,7 @@ class Greety {
     this.options = options
   }
 
-  init (options = {}) {
+  config (options = {}) {
     this.options = { ...DEFAULT, ...this.options, ...options }
 
     const i18nOptions = this.getI18nOptions(this.options)
