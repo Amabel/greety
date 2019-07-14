@@ -25,17 +25,17 @@ describe('greety.init()', () => {
 
 describe('greety.greeting()', () => {
   context('when using default settings', () => {
-    it('returns a normal-formal greeting in English', () => {
+    it('returns a formal greeting in English', () => {
       expect(greety.greeting()).toEqual(translate.en.normal['greeting-formal'])
     })
   })
 
-  context('when formal is set to false', () => {
+  context("when 'formal' is set to false", () => {
     beforeEach(() => {
       greety.init({ formal: false })
     })
 
-    it('returns a formal greeting in English', () => {
+    it('returns a non-formal greeting in English', () => {
       expect(greety.greeting()).toEqual(translate.en.normal.greeting)
     })
   })
