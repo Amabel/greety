@@ -30,6 +30,16 @@ describe('greety.greeting()', () => {
     })
   })
 
+  context("when 'formal' is set to true", () => {
+    beforeEach(() => {
+      greety.config({ formal: true })
+    })
+
+    it('returns a non-formal greeting in English', () => {
+      expect(greety.greeting()).toEqual(translate.en.normal['greeting-formal'])
+    })
+  })
+
   context("when 'formal' is set to false", () => {
     beforeEach(() => {
       greety.config({ formal: false })
@@ -37,6 +47,26 @@ describe('greety.greeting()', () => {
 
     it('returns a non-formal greeting in English', () => {
       expect(greety.greeting()).toEqual(translate.en.normal.greeting)
+    })
+  })
+
+  context("when 'simpleFormat' is set to true", () => {
+    beforeEach(() => {
+      greety.config({ simpleFormat: true })
+    })
+
+    it('returns a simple format greeting', () => {
+      expect(greety.greeting()).toEqual(translate.en.simple['greeting-formal'])
+    })
+  })
+
+  context("when 'language' is set to null", () => {
+    beforeEach(() => {
+      greety.config({ language: null })
+    })
+
+    it('returns the default language (English)', () => {
+      expect(greety.greeting()).toEqual(translate.en.normal['greeting-formal'])
     })
   })
 })
