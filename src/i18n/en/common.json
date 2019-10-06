@@ -1,0 +1,11 @@
+{
+  "normal": {
+    "greeting-formal": "Hello",
+    "greeting": "Hi"
+  },
+
+  "simple": {
+    "greeting-formal": "Hello",
+    "greeting": "Hey"
+  }
+}

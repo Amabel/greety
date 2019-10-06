@@ -1,0 +1,11 @@
+{
+  "normal": {
+    "greeting-formal": "こんにちは",
+    "greeting": "おはようございます"
+  },
+
+  "simple": {
+    "greeting-formal": "こんにちは",
+    "greeting": "おはよう"
+  }
+}

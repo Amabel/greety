@@ -1,19 +1,20 @@
-import babel from 'rollup-plugin-babel';
-import nodeResolve from 'rollup-plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
-import changeCase from 'change-case';
-import pkg from './package.json';
+import babel from 'rollup-plugin-babel'
+import nodeResolve from 'rollup-plugin-node-resolve'
+import json from 'rollup-plugin-json'
+import { terser } from 'rollup-plugin-terser'
+import changeCase from 'change-case'
+import pkg from './package.json'
 
-const banner = require('./shared/banner');
+const banner = require('./shared/banner')
 
-const name = changeCase.pascalCase(pkg.name);
-const input = 'src/index.js';
+const name = changeCase.pascalCase(pkg.name)
+const input = 'src/index.js'
 
 const getBabelOptions = ({ useESModules }) => ({
   exclude: /node_modules/,
   runtimeHelpers: true,
-  plugins: [['@babel/transform-runtime', { useESModules }]],
-});
+  plugins: [['@babel/transform-runtime', { useESModules }]]
+})
 
 export default [
   {
@@ -22,9 +23,13 @@ export default [
       banner,
       name,
       file: pkg.main,
-      format: 'umd',
+      format: 'umd'
     },
-    plugins: [babel(getBabelOptions({ useESModules: true })), nodeResolve()],
+    plugins: [
+      json(),
+      babel(getBabelOptions({ useESModules: true })),
+      nodeResolve()
+    ]
   },
   {
     input,
@@ -32,9 +37,14 @@ export default [
       banner,
       name,
       file: pkg.unpkg,
-      format: 'umd',
+      format: 'umd'
     },
-    plugins: [babel(getBabelOptions({ useESModules: true })), nodeResolve(), terser()],
+    plugins: [
+      json(),
+      babel(getBabelOptions({ useESModules: true })),
+      nodeResolve(),
+      terser()
+    ]
   },
   {
     input,
@@ -42,8 +52,12 @@ export default [
       banner,
       name,
       file: pkg.module,
-      format: 'umd',
+      format: 'esm'
     },
-    plugins: [babel(getBabelOptions({ useESModules: true }))],
-  },
+    plugins: [
+      json(),
+      babel(getBabelOptions({ useESModules: true })),
+      nodeResolve()
+    ]
+  }
 ]
